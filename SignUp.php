@@ -164,7 +164,7 @@
                 <input type="password" name="password" placeholder="Password" required>
                 <i class='bx bxs-lock-alt' ></i>
             </div>
-            </div>
+            </div>  
             <div class=border>
             <div class="inputbox">
                 <input type="password" name="confirm_password" placeholder="Confirm Password" required>
