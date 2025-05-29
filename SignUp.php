@@ -173,8 +173,21 @@
                     <input type="password" name="confirm_password" placeholder="Confirm Password" required>
                     <i class='bx bxs-lock-alt'></i>
                 </div>
-
             </div>
+            <div class="rem_forgot" style="margin-left: 10px;">
+                <label>
+                    <input type="checkbox" class="rem_forgot_checkbox" id="showPassword">Show Password
+                </label>
+            </div>
+            <script>
+                document.getElementById('showPassword').addEventListener('change', function () {
+                    const passwordFields = document.querySelectorAll('input[name="password"], input[name="confirm_password"]');
+                    passwordFields.forEach(field => {
+                        field.type = this.checked ? 'text' : 'password';
+                    });
+                });
+            </script>
+
             <input type="submit" class="btn" name="register"></input><br><br>
             <p class="or">-----------or-----------</p><br>
             <div class="register-link">
