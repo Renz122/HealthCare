@@ -159,8 +159,16 @@ $email = $_SESSION['email'] ?? '';
 <body>
 
 <header>
-    <h1>Heaven's Health Care</h1>
-    <p>Your Health, Our Priority</p>
+    <span style="display:inline-flex;align-items:center;gap:16px;">
+        <img src="485176591_622755117568334_1373759861774274875_n.jpg" 
+             alt="Blue medical cross with angel wings and a caduceus symbol in the center, a halo above the cross, surrounded by a golden radiant circle. The text Heavens Healthcare appears below in bold letters, with a calm and caring tone suggesting trust and compassion in a healthcare setting."
+             style="height:104px;width:auto;vertical-align:middle;">
+        <span>
+            <h1 style="display:inline;margin:0;vertical-align:middle;padding-right: 75px;">Heaven's Health Care</h1><br>
+            <span style="font-size:1.1em;padding-right: 75px;">Your Health, Our Priority</span>
+        </span>
+    </span>
+    
 </header>
 
 <nav>
@@ -177,7 +185,6 @@ $email = $_SESSION['email'] ?? '';
             <div id="dropdownContent" class="dropdown-content">
                 <p><strong>Username:</strong> <?php echo htmlspecialchars($username); ?></p>
                 <p><strong>Email:</strong> <?php echo htmlspecialchars($email); ?></p>
-                <a href="UserProfile.php">View Full Profile</a>
                 <a href="Logout.php">Logout</a>
             </div>
         </div>
