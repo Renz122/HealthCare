@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css'>
     <title>Sign Up</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: 0;
@@ -17,8 +17,8 @@
         }
 
         @media (min-width: 344px) {
-            body{
-                background-color:rgb(177, 206, 207);
+            body {
+                background-color: rgb(177, 206, 207);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -28,25 +28,26 @@
             .Uno {
                 width: 350px;
                 background-color: #0a7c84;
-                color:black;
+                color: black;
                 border-radius: 12px;
-                padding: 30px 40px; 
+                padding: 30px 40px;
                 box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9)
             }
-            .Uno h1{
+
+            .Uno h1 {
                 font-size: 36px;
                 text-align: center;
             }
 
-            .Uno .inputbox{
+            .Uno .inputbox {
                 position: relative;
                 width: 100%;
                 height: 50px;
                 margin: 30px 0;
             }
-            
-            .inputbox input{
-                width:85%;
+
+            .inputbox input {
+                width: 85%;
                 height: 100%;
                 background: transparent;
                 border: none;
@@ -55,52 +56,52 @@
                 border-radius: 40px;
                 font-size: 16px;
                 color: #fff;
-                padding: 0px  0px 0px 10px;
-                
-            }
-            
+                padding: 0px 0px 0px 10px;
 
-            .inputbox input::placeholder{
-                color:#fff;
             }
 
-            .inputbox input{
-                padding-left:50px;
+
+            .inputbox input::placeholder {
+                color: #fff;
             }
 
-            .inputbox i{
+            .inputbox input {
+                padding-left: 50px;
+            }
+
+            .inputbox i {
                 position: absolute;
                 left: 35px;
                 bottom: 15px;
                 transform: translate(-50%);
                 font-size: 20px;
-                
+
             }
-            
-            .Uno .rem_forgot{
+
+            .Uno .rem_forgot {
                 display: flex;
                 justify-content: space-between;
                 font-size: 14.5px;
                 margin: -15px 0 15px;
-                
+
             }
 
-            .rem_forgot label input{
+            .rem_forgot label input {
                 accent-color: #fff;
-                margin-right: 3px ;
+                margin-right: 3px;
             }
 
-            .rem_forgot a{
-                color:#000000;
+            .rem_forgot a {
+                color: #000000;
                 text-decoration: none;
 
             }
 
-            .rem_forgot a:hover{
+            .rem_forgot a:hover {
                 text-decoration: underline;
             }
 
-            .Uno .btn{
+            .Uno .btn {
                 width: 95.4%;
                 height: 45px;
                 background: #fff;
@@ -115,63 +116,65 @@
                 margin-left: 10px;
             }
 
-            .Uno .register-link{
+            .Uno .register-link {
                 font-size: 14.5px;
                 text-align: center;
                 margin-top: 20px;
 
             }
+
             .SIGN {
                 margin-top: 10px;
             }
 
-            .register-link a{
+            .register-link a {
                 color: #552795;
                 text-decoration: none;
                 font-weight: 600;
             }
 
-            .register-link a:hover{
+            .register-link a:hover {
                 text-decoration: underline;
             }
 
-            .or{
+            .or {
                 text-align: center;
-                 font-family: 'Courier New', Courier, monospace;
+                font-family: 'Courier New', Courier, monospace;
 
             }
         }
-    </style> 
+    </style>
 </head>
+
 <body>
     <div class="Uno">
         <form action="user_account.php" method="POST">
             <h1 class="SIGN">Sign Up</h1>
-           <div class=border>
-            <div class="inputbox">
-                <input type="text" name="username" placeholder="Username" style="padding-left 101px;" required>
-                <i class='bx bxs-user'></i>
-            </div>
-        </div>
             <div class=border>
-            <div class="inputbox">
-                <input type="email" name="email" placeholder="Email" required>
-                <i class="bx bxl-gmail"></i>
-            </div>
+                <div class="inputbox">
+                    <input type="text" name="username" placeholder="Username" style="padding-left 101px;" required>
+                    <i class='bx bxs-user'></i>
+                </div>
             </div>
             <div class=border>
-            <div class="inputbox">
-                <input type="password" name="password" placeholder="Password" required>
-                <i class='bx bxs-lock-alt' ></i>
+                <div class="inputbox">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <i class="bx bxl-gmail"></i>
+                </div>
             </div>
-            </div>  
             <div class=border>
-            <div class="inputbox">
-                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-                <i class='bx bxs-lock-alt' ></i>
+                <div class="inputbox">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
             </div>
-           
-        </div>
+            <div class=border>
+                <div class="inputbox">
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+            </div>
             <input type="submit" class="btn" name="register"></input><br><br>
             <p class="or">-----------or-----------</p><br>
             <div class="register-link">
@@ -183,5 +186,5 @@
     </div>
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>
