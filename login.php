@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['username'] = $row['username'];   
             $_SESSION['email'] = $row['email'];
 
-                echo '<script>alert("Login Successful."); window.location.href = "HomePage.php ";</script>';
+                echo '<script>alert("Login Successful."); window.location.href = "index.php ";</script>';
                 exit;
 
             } else {
