@@ -14,11 +14,11 @@ if (isset($_POST['submit'])) {
         exit;
     }
 
-    $query = "SELECT * FROM users WHERE email = ?";
+    $query = "SELECT * FROM users WHERE email = ? OR username = ?";
     $stmt = mysqli_prepare($conn, $query);
 
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_bind_param($stmt, "ss", $email, $email);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
 
