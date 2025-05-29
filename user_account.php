@@ -7,6 +7,9 @@ if(isset($_POST['register'])){
     $email = trim($_POST['email']);
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
+    $custom_question = $_POST['custom_question'];
+    $custom_answer = $_POST['custom_answer'];
+
     $created_at = date('Y-m-d H:i:s');
 
     $query = "SELECT * FROM users WHERE email = ?";
@@ -23,9 +26,9 @@ if(isset($_POST['register'])){
     } 
     else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $query = "INSERT INTO users (username, email, password, created_at) VALUES (?, ?, ?, ?)";
+        $query = "INSERT INTO users (username, email, password, custom_question, custom_answer, created_at) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($stmt, "ssss", $username, $email, $hashed_password, $created_at);
+        mysqli_stmt_bind_param($stmt, "ssssss", $username, $email, $hashed_password, $custom_question, $custom_answer, $created_at);
         
         if(mysqli_stmt_execute($stmt)){
             echo '<script>alert("Registration successful!"); window.location.href = "SignIn.php";</script>';
