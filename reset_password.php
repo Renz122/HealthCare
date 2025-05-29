@@ -10,17 +10,17 @@ if (isset($_POST['reset'])) {
     $confirm_password = $_POST['confirm_password'] ?? '';
 
     if (!$user_id) {
-        echo "<script>alert('Session expired. Please try again.'); window.location.href='forgot_password.php';</script>";
+        echo "<script>alert('Session expired. Please try again.'); window.location.href='forgot.php';</script>";
         exit;
     }
 
     if (strcasecmp(trim($correct_answer), $provided_answer) !== 0) {
-        echo "<script>alert('Incorrect security answer.'); window.location.href='forgot_password.php';</script>";
+        echo "<script>alert('Incorrect security answer.'); window.location.href='forgot.php';</script>";
         exit;
     }
 
     if ($new_password !== $confirm_password) {
-        echo "<script>alert('Passwords do not match.'); window.location.href='forgot_password.php';</script>";
+        echo "<script>alert('Passwords do not match.'); window.location.href='forgot.php';</script>";
         exit;
     }
 
@@ -32,7 +32,7 @@ if (isset($_POST['reset'])) {
         unset($_SESSION['recovery_user_id'], $_SESSION['recovery_answer']);
         echo "<script>alert('Password reset successful.'); window.location.href='SignIn.php';</script>";
     } else {
-        echo "<script>alert('Error updating password.'); window.location.href='forgot_password.php';</script>";
+        echo "<script>alert('Error updating password.'); window.location.href='forgot.php';</script>";
     }
 }
 ?>

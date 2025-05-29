@@ -181,50 +181,48 @@ if (isset($_POST['submit'])) {
             <input type="submit" class="btn" name="submit" value="Submit">
         </form>
 
-        <?php if ($show_question): ?>
-            <div style="margin-top: 20px; color: white;">
-                <label for="security_answer"><?php echo htmlspecialchars($question); ?></label>
+        <div style="margin-top: 20px; color: white;">
+            <label for="security_answer">Security Question: <?php echo !empty($question) ? htmlspecialchars($question) : 'Enter email or username first'; ?></label>
 
-                <?php if (!empty($_SESSION['recovery_user_id'])): ?>
-                    <form action="reset_password.php" method="POST" style="margin-top: 10px;">
-                        <div class="inputbox">
-                            <input type="text" name="security_answer" required placeholder="Your Answer" class="inputbox"
-                                style="width: 100%; margin-top: 10px;">
-                        </div>
-                        <div class="inputbox">
-                            <input type="password" id="new_password" name="new_password" required placeholder="New Password"
-                                class="inputbox" style="width: 100%; margin-top: 10px;">
-                        </div>
-                        <div class="inputbox">
-                            <input type="password" id="confirm_password" name="confirm_password" required
-                                placeholder="Confirm Password" class="inputbox" style="width: 100%; margin-top: 10px;">
-                        </div>
+            <?php if (!empty($_SESSION['recovery_user_id']) && !empty($question) && $question !== 'User not found.'): ?>
+                <form action="reset_password.php" method="POST" style="margin-top: 10px;">
+                    <div class="inputbox">
+                        <input type="text" name="security_answer" required placeholder="Your Answer" class="inputbox"
+                            style="width: 100%; margin-top: 10px;">
+                    </div>
+                    <div class="inputbox">
+                        <input type="password" id="new_password" name="new_password" required placeholder="New Password"
+                            class="inputbox" style="width: 100%; margin-top: 10px;">
+                    </div>
+                    <div class="inputbox">
+                        <input type="password" id="confirm_password" name="confirm_password" required
+                            placeholder="Confirm Password" class="inputbox" style="width: 100%; margin-top: 10px;">
+                    </div>
 
-                        <div style="margin-left: 10px; color: white;">
-                            <label>
-                                <input type="checkbox" id="showPassword" style="margin-right: 5px;">
-                                Show Password
-                            </label>
-                        </div>
+                    <div style="margin-left: 10px; color: white;">
+                        <label>
+                            <input type="checkbox" id="showPassword" style="margin-right: 5px;">
+                            Show Password
+                        </label>
+                    </div>
 
-                        <input type="submit" name="reset" value="Reset Password" class="btn" style="margin-top: 10px;">
-                    </form>
+                    <input type="submit" name="reset" value="Reset Password" class="btn" style="margin-top: 10px;">
+                </form>
 
-                    <script>
-                        document.getElementById('showPassword').addEventListener('change', function () {
-                            const passwordFields = [
-                                document.getElementById('new_password'),
-                                document.getElementById('confirm_password')
-                            ];
-                            passwordFields.forEach(field => {
-                                field.type = this.checked ? 'text' : 'password';
-                            });
+                <script>
+                    document.getElementById('showPassword').addEventListener('change', function () {
+                        const passwordFields = [
+                            document.getElementById('new_password'),
+                            document.getElementById('confirm_password')
+                        ];
+                        passwordFields.forEach(field => {
+                            field.type = this.checked ? 'text' : 'password';
                         });
-                    </script>
-                <?php endif; ?>
+                    });
+                </script>
+            <?php endif; ?>
 
-            </div>
-        <?php endif; ?>
+        </div>
     </div>
 
     <script src="script.js"></script>
