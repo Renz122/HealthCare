@@ -143,7 +143,22 @@
             </div>
             <div class="inputbox">
                 <input type="password" placeholder="Password" name="password" required >
-                <i class='bx bxs-lock-alt' ></i>
+                <i>
+                    <img src="eyeON.svg" alt="Show Password" style="width: 20px; cursor: pointer; display: block;" onclick="togglePasswordVisibility()">
+                </i>
+                <script>
+                    function togglePasswordVisibility() {
+                        const passwordInput = document.querySelector('input[name="password"]');
+                        const img = document.querySelector('img[alt="Show Password"]');
+                        if (passwordInput.type === "password") {
+                            passwordInput.type = "text";
+                            img.src = "eyeOFF.svg";
+                        } else {
+                            passwordInput.type = "password";
+                            img.src = "eyeON.svg";
+                        }
+                    }
+                </script>
             </div>
             <div class="rem_forgot">
                 <label>
@@ -159,6 +174,7 @@
                 <br>
                 <p style="color:white;">Don't have an Account?</p>
                 <a href="SignUp.php">Sign Up</a>
+                <br>
             </div>
         </form>
     </div> 
