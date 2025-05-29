@@ -171,18 +171,24 @@ if (isset($_POST['submit'])) {
 
 <body>
     <div class="Uno">
-        <form action="forgot.php" method="POST">
+        <?php if (!$show_question || $question === 'User not found.'): ?>
+            <form action="forgot.php" method="POST">
+                <h1 class="SIGN">Forgot Password</h1>
+                <div class="inputbox">
+                    <input type="text" id="username" name="email" placeholder="Username or Gmail" required
+                        value="<?php echo isset($_COOKIE['email']) ? $_COOKIE['email'] : ''; ?>">
+                    <i class='bx bxs-user'></i>
+                </div>
+                <input type="submit" class="btn" name="submit" value="Submit">
+            </form>
+        <?php else: ?>
             <h1 class="SIGN">Forgot Password</h1>
-            <div class="inputbox">
-                <input type="text" id="username" name="email" placeholder="Username or Gmail" required
-                    value="<?php echo isset($_COOKIE['email']) ? $_COOKIE['email'] : ''; ?>">
-                <i class='bx bxs-user'></i>
-            </div>
-            <input type="submit" class="btn" name="submit" value="Submit">
-        </form>
+        <?php endif; ?>
+
 
         <div style="margin-top: 20px; color: white;">
-            <label for="security_answer">Security Question: <?php echo !empty($question) ? htmlspecialchars($question) : 'Enter email or username first'; ?></label>
+            <label for="security_answer">Security Question:
+                <?php echo !empty($question) ? htmlspecialchars($question) : 'Enter email or username first'; ?></label>
 
             <?php if (!empty($_SESSION['recovery_user_id']) && !empty($question) && $question !== 'User not found.'): ?>
                 <form action="reset_password.php" method="POST" style="margin-top: 10px;">
