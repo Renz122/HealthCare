@@ -27,7 +27,7 @@
 
             .Uno {
                 width: 350px;
-                background-color: rgb(94, 146, 243);
+                background-color: #0a7c84;
                 color:black;
                 border-radius: 12px;
                 padding: 30px 40px; 
@@ -175,7 +175,7 @@
             <input type="submit" class="btn" name="register"></input><br><br>
             <p class="or">-----------or-----------</p><br>
             <div class="register-link">
-                <p>Already have an Account?</p>
+                <p style="color:white;">Already have an Account?</p>
                 <div class="Sign-In"><a href="Sign_In.php">Sign In</a> </div>
                 <br>
             </div>

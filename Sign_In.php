@@ -25,7 +25,7 @@
 
             .Uno {
                 width: 350px;
-                background-color: rgb(94, 146, 243);
+                background-color: #0a7c84;
                 color:black;
                 border-radius: 12px;
                 padding: 30px 40px;
@@ -157,7 +157,7 @@
                 <br>
                 <p class="or">-----------or-----------</p>
                 <br>
-                <p>Don't have an Account?</p>
+                <p style="color:white;">Don't have an Account?</p>
                 <a href="SignUp.php">Sign Up</a>
             </div>
         </form>
