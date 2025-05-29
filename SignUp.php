@@ -174,6 +174,20 @@
                     <i class='bx bxs-lock-alt'></i>
                 </div>
             </div>
+            <div class="border">
+                <div class="inputbox">
+                    <input type="text" name="custom_question" placeholder="Security Question" required>
+                    <i class='bx bx-help-circle' title="Create your own security question"></i>
+                </div>
+            </div>
+            <div class="border">
+                <div class="inputbox">
+                    <input type="text" name="custom_answer" placeholder="Answer to Security Question" required>
+                    <i class='bx bx-key' title="Answer to your security question"></i>
+                </div>
+            </div>
+
+
             <div class="rem_forgot" style="margin-left: 10px;">
                 <label>
                     <input type="checkbox" class="rem_forgot_checkbox" id="showPassword">Show Password

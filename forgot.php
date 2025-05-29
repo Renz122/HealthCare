@@ -1,3 +1,33 @@
+<?php
+include 'conn.php';
+session_start();
+
+$question = '';
+$show_question = false;
+
+if (isset($_POST['submit'])) {
+    $input = trim($_POST['email'] ?? '');
+
+    if (!empty($input)) {
+        $query = "SELECT * FROM users WHERE email = ? OR username = ?";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "ss", $input, $input);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($row = mysqli_fetch_assoc($result)) {
+            $_SESSION['recovery_user_id'] = $row['ID'];
+            $_SESSION['recovery_answer'] = $row['custom_answer'];
+            $question = $row['custom_question'];
+            $show_question = true;
+        } else {
+            $question = "User not found.";
+            $show_question = true;
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -141,51 +171,62 @@
 
 <body>
     <div class="Uno">
-        <form action="login.php" method="POST">
-            <h1 class="SIGN">Sign In</h1>
+        <form action="forgot.php" method="POST">
+            <h1 class="SIGN">Forgot Password</h1>
             <div class="inputbox">
                 <input type="text" id="username" name="email" placeholder="Username or Gmail" required
                     value="<?php echo isset($_COOKIE['email']) ? $_COOKIE['email'] : ''; ?>">
                 <i class='bx bxs-user'></i>
             </div>
-            <div class="inputbox">
-                <input type="password" placeholder="Password" name="password" required>
-                <i>
-                    <img src="eyeON.svg" alt="Show Password" style="width: 20px; cursor: pointer; display: block;"
-                        onclick="togglePasswordVisibility()">
-                </i>
-                <script>
-                    function togglePasswordVisibility() {
-                        const passwordInput = document.querySelector('input[name="password"]');
-                        const img = document.querySelector('img[alt="Show Password"]');
-                        if (passwordInput.type === "password") {
-                            passwordInput.type = "text";
-                            img.src = "eyeOFF.svg";
-                        } else {
-                            passwordInput.type = "password";
-                            img.src = "eyeON.svg";
-                        }
-                    }
-                </script>
-            </div>
-            <div class="rem_forgot">
-                <label>
-                    <input type="checkbox" class="rem_forgot_checkbox" checked>Trust this device for 30 days
-                </label>
-                <a href="forgot.php" class="rem_forgot_password">Forgot Password</a>
-            </div>
-
-            <input type="submit" class="btn" name="submit"></input>
-            <div class="register-link">
-                <br>
-                <p class="or">-----------or-----------</p>
-                <br>
-                <p style="color:white;">Don't have an Account?</p>
-                <a href="SignUp.php">Sign Up</a>
-                <br>
-            </div>
+            <input type="submit" class="btn" name="submit" value="Submit">
         </form>
+
+        <?php if ($show_question): ?>
+            <div style="margin-top: 20px; color: white;">
+                <label for="security_answer"><?php echo htmlspecialchars($question); ?></label>
+
+                <?php if (!empty($_SESSION['recovery_user_id'])): ?>
+                    <form action="reset_password.php" method="POST" style="margin-top: 10px;">
+                        <div class="inputbox">
+                            <input type="text" name="security_answer" required placeholder="Your Answer" class="inputbox"
+                                style="width: 100%; margin-top: 10px;">
+                        </div>
+                        <div class="inputbox">
+                            <input type="password" id="new_password" name="new_password" required placeholder="New Password"
+                                class="inputbox" style="width: 100%; margin-top: 10px;">
+                        </div>
+                        <div class="inputbox">
+                            <input type="password" id="confirm_password" name="confirm_password" required
+                                placeholder="Confirm Password" class="inputbox" style="width: 100%; margin-top: 10px;">
+                        </div>
+
+                        <div style="margin-left: 10px; color: white;">
+                            <label>
+                                <input type="checkbox" id="showPassword" style="margin-right: 5px;">
+                                Show Password
+                            </label>
+                        </div>
+
+                        <input type="submit" name="reset" value="Reset Password" class="btn" style="margin-top: 10px;">
+                    </form>
+
+                    <script>
+                        document.getElementById('showPassword').addEventListener('change', function () {
+                            const passwordFields = [
+                                document.getElementById('new_password'),
+                                document.getElementById('confirm_password')
+                            ];
+                            passwordFields.forEach(field => {
+                                field.type = this.checked ? 'text' : 'password';
+                            });
+                        });
+                    </script>
+                <?php endif; ?>
+
+            </div>
+        <?php endif; ?>
     </div>
+
     <script src="script.js"></script>
 </body>
 
