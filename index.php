@@ -32,7 +32,7 @@ $email = $_SESSION['email'] ?? '';
         }
 
         header {
-            background-color: #0a7c84;
+            background-color:rgb(69, 162, 169);
             color: white;
             padding: 20px;
             text-align: center;
@@ -101,7 +101,7 @@ $email = $_SESSION['email'] ?? '';
         }
 
         footer {
-            background-color: #0a7c84;
+            background-color:rgb(69, 162, 169);
             color: white;
             text-align: center;
             padding: 15px;
@@ -160,6 +160,8 @@ $email = $_SESSION['email'] ?? '';
             font-size: 20px;
             line-height: 1.5;   
         }
+
+    
     </style>
 </head>
 <body>
@@ -168,7 +170,7 @@ $email = $_SESSION['email'] ?? '';
     <span style="display:inline-flex;align-items:center;gap:16px;">
         <img src="485176591_622755117568334_1373759861774274875_n.jpg" 
              alt="Blue medical cross with angel wings and a caduceus symbol in the center, a halo above the cross, surrounded by a golden radiant circle. The text Heavens Healthcare appears below in bold letters, with a calm and caring tone suggesting trust and compassion in a healthcare setting."
-             style="height:104px;width:auto;vertical-align:middle;">
+             style="height:104px;width:auto;vertical-align:middle;border-radius:10px;">
         <span>
             <h1 style="display:inline;margin:0;vertical-align:middle;padding-right: 75px;">Heaven's Health Care</h1><br>
             <span style="font-size:1.1em;padding-right: 75px;">Your Health, Our Priority</span>
