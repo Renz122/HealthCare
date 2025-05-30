@@ -214,12 +214,74 @@ $email = $_SESSION['email'] ?? '';
 <section id="services">
     <h2>Our Services</h2>
     <div class="services">
-        <div class="service"><h3>General Checkup</h3><p>Routine examinations and health screenings to keep you in top condition.</p></div>
-        <div class="service"><h3>Pediatrics</h3><p>Expert care for infants, children, and adolescents by certified pediatricians.</p></div>
-        <div class="service"><h3>Diagnostics</h3><p>Advanced lab and imaging services for accurate and timely diagnosis.</p></div>
-        <div class="service"><h3>Vaccinations</h3><p>Stay protected with our full range of adult and child immunization services.</p></div>
+        <div class="service" style="width:300px;">
+            <div style="text-align:center;margin-bottom:12px;">
+                <div class="fade-slider" style="position:relative;width:100%;height:180px;">
+                    <img src="Ck4.jpg" alt="General Checkup 1" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s;">
+                    <img src="Ck2.jpg" alt="General Checkup 2" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s;">
+                    <img src="Ck3.jpg" alt="General Checkup 3" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s;">
+                </div>
+            </div>
+            <h3>General Checkup</h3>
+            <p>Routine examinations and health screenings to keep you in top condition.</p>
+        </div>
+        <div class="service" style="width:300px;">
+            <div style="text-align:center;margin-bottom:12px;">
+                <div class="fade-slider" style="position:relative;width:100%;height:180px;">
+                    <img src="Pd1.jpg" alt="Pediatrics 1" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s;">
+                    <img src="Pd2.jpg" alt="Pediatrics 2" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s;">
+                    <img src="Pd3.jpg" alt="Pediatrics 3" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s;">
+                </div>
+            </div>
+            <h3>Pediatrics</h3>
+            <p>Expert care for infants, children, and adolescents by certified pediatricians.</p>
+        </div>
+        <div class="service" style="width:300px;">
+            <div style="text-align:center;margin-bottom:12px;">
+                <div class="fade-slider" style="position:relative;width:100%;height:180px;">
+                    <img src="Dg1.jpg" alt="Diagnostics 1" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s;">
+                    <img src="Dg2.jpg" alt="Diagnostics 2" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s;">
+                    <img src="Dg3.jpg" alt="Diagnostics 3" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s;">
+                </div>
+            </div>
+            <h3>Diagnostics</h3>
+            <p>Advanced lab and imaging services for accurate and timely diagnosis.</p>
+        </div>
+        <div class="service" style="width:300px;">
+            <div style="text-align:center;margin-bottom:12px;">
+                <div class="fade-slider" style="position:relative;width:100%;height:180px;">
+                    <img src="Vc1.jpg" alt="Vaccinations 1" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s;">
+                    <img src="Vc2.jpg" alt="Vaccinations 2" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s;">
+                    <img src="Vc3.jpg" alt="Vaccinations 3" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1s;">
+                </div>
+            </div>
+            <h3>Vaccinations</h3>
+            <p>Stay protected with our full range of adult and child immunization services.</p>
+        </div>
     </div>
 </section>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.fade-slider').forEach(function(slider) {
+        let imgs = slider.querySelectorAll('.fade-img');
+        let idx = 0;
+        setInterval(() => {
+            imgs[idx].style.opacity = 0;
+            idx = (idx + 1) % imgs.length;
+            imgs[idx].style.opacity = 1;
+        }, 3000);
+    });
+});
+</script>
+<script>
+let currentFade = 0;
+const fadeImgs = document.querySelectorAll('#fade-slider .fade-img');
+setInterval(() => {
+    fadeImgs[currentFade].style.opacity = 0;
+    currentFade = (currentFade + 1) % fadeImgs.length;
+    fadeImgs[currentFade].style.opacity = 1;
+}, 3000);
+</script>
 
 <section id="health-info">
     <h2>Health Info Center</h2>

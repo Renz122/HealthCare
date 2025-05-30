@@ -96,7 +96,7 @@
             }
 
             .rem_forgot_password {
-                margin-right: 10px;
+                margin-left: 20px;
             }
 
             .rem_forgot a:hover {
@@ -172,9 +172,6 @@
                 </script>
             </div>
             <div class="rem_forgot">
-                <label>
-                    <input type="checkbox" class="rem_forgot_checkbox" checked>Trust this device for 30 days
-                </label>
                 <a href="forgot.php" class="rem_forgot_password">Forgot Password</a>
             </div>
 
