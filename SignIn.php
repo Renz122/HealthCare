@@ -17,19 +17,22 @@
 
         @media (min-width: 344px) {
             body {
-                background-color: rgb(177, 206, 207);
+               background-image: url('BGround.png');
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 min-height: 100vh;
             }
 
-            .Uno {
+          .Uno {
                 width: 350px;
-                background-color: #0a7c84;
+                background-color: rgba(71, 180, 188, 0.85);
                 color: black;
                 border-radius: 12px;
-                padding: 30px 40px;
+                padding: 30px 40px; 
                 box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9)
             }
 

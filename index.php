@@ -79,11 +79,12 @@ $email = $_SESSION['email'] ?? '';
         .service {
             border: 1px solid #ccc;
             border-radius: 5px;
-            padding: 15px;
-            margin: 10px;
-            width: 250px;
-            box-shadow: 2px 2px 8px #aaa;
+            padding: 22px;
+            margin: 16px;
+            width: 300px;
+            box-shadow: 2px 2px 10px #aaa;
             font-family: Arial, sans-serif;
+            width: 1000px;
         }
 
         .service ul {
@@ -153,6 +154,11 @@ $email = $_SESSION['email'] ?? '';
             color: white;
             padding: 2px;
             border-radius: 4px;
+        }
+
+        .service p{
+            font-size: 20px;
+            line-height: 1.5;   
         }
     </style>
 </head>

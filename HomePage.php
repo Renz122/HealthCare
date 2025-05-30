@@ -33,7 +33,6 @@ if ($isLoggedIn) {
   <link rel="stylesheet" href="Design.css" />
   <title>Heaven`s HealthCare</title>
   <style>
-    /* Your existing styles */
     @media (min-width: 344px) {
         body {
             background: rgb(177, 206, 207);
