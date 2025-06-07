@@ -214,7 +214,7 @@ $email = $_SESSION['email'] ?? '';
 <section id="services">
     <h2>Our Services</h2>
     <div class="services">
-        <div class="service" style="width:300px;">
+        <a href="general-checkup.php" class="service" style="width:300px; text-decoration:none; color:inherit;">
             <div style="text-align:center;margin-bottom:12px;">
                 <div class="fade-slider" style="position:relative;width:100%;height:180px;">
                     <img src="Ck4.jpg" alt="General Checkup 1" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s;">
@@ -224,8 +224,8 @@ $email = $_SESSION['email'] ?? '';
             </div>
             <h3>General Checkup</h3>
             <p>Routine examinations and health screenings to keep you in top condition.</p>
-        </div>
-        <div class="service" style="width:300px;">
+        </a>
+        <a href="pediatrics.php" class="service" style="width:300px; text-decoration:none; color:inherit;">
             <div style="text-align:center;margin-bottom:12px;">
                 <div class="fade-slider" style="position:relative;width:100%;height:180px;">
                     <img src="Pd1.jpg" alt="Pediatrics 1" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s;">
@@ -235,8 +235,8 @@ $email = $_SESSION['email'] ?? '';
             </div>
             <h3>Pediatrics</h3>
             <p>Expert care for infants, children, and adolescents by certified pediatricians.</p>
-        </div>
-        <div class="service" style="width:300px;">
+        </a>
+        <a href="diagnostics.php" class="service" style="width:300px; text-decoration:none; color:inherit;">
             <div style="text-align:center;margin-bottom:12px;">
                 <div class="fade-slider" style="position:relative;width:100%;height:180px;">
                     <img src="Dg1.jpg" alt="Diagnostics 1" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s;">
@@ -246,8 +246,8 @@ $email = $_SESSION['email'] ?? '';
             </div>
             <h3>Diagnostics</h3>
             <p>Advanced lab and imaging services for accurate and timely diagnosis.</p>
-        </div>
-        <div class="service" style="width:300px;">
+        </a>
+        <a href="vaccinations.php" class="service" style="width:300px; text-decoration:none; color:inherit;">
             <div style="text-align:center;margin-bottom:12px;">
                 <div class="fade-slider" style="position:relative;width:100%;height:180px;">
                     <img src="Vc1.jpg" alt="Vaccinations 1" class="fade-img" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 1s;">
@@ -257,7 +257,7 @@ $email = $_SESSION['email'] ?? '';
             </div>
             <h3>Vaccinations</h3>
             <p>Stay protected with our full range of adult and child immunization services.</p>
-        </div>
+        </a>
     </div>
 </section>
 <script>
