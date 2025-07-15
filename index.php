@@ -72,8 +72,10 @@ $email = $_SESSION['email'] ?? '';
 
         .services {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        }
+
+        .important-notes {
+            width: 100%;
         }
 
         .service {
@@ -81,10 +83,8 @@ $email = $_SESSION['email'] ?? '';
             border-radius: 5px;
             padding: 22px;
             margin: 16px;
-            width: 300px;
             box-shadow: 2px 2px 10px #aaa;
             font-family: Arial, sans-serif;
-            width: 1000px;
         }
 
         .service ul {
@@ -323,7 +323,7 @@ setInterval(() => {
 
 <section>
     <div class="services">
-        <div class="service">
+        <div class="service important-notes">
             <h3>Important Notes</h3>
             <p>Good health involves physical, mental, and social well-being—not just the absence of illness.</p>
             <p>Maintain a healthy weight and protect against diseases with vaccinations and safe food handling.</p>
